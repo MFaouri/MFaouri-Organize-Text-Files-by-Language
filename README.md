@@ -13,6 +13,22 @@ To use this script, follow these steps:
     Make the script executable by running chmod +x organize_files.sh.
     Run the script by typing ./organize_files.sh and pressing Enter.
 
+## Code
+```
+#!/bin/bash
+
+# Loop through each language
+for lang in arabic Bengali chinese english french hindi indonesian portuguese russian spanish; do
+    # Create a folder for the language, if it doesn't already exist
+    if [ ! -d "$lang" ]; then
+        mkdir "$lang"
+    fi
+    
+    # Move all the txt files for this language into the language folder
+    mv "${lang}-"*.txt "$lang/"
+done
+```
+
 ## How it Works
 
 The script works by looping through each language and performing the following steps:
